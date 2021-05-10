@@ -10,9 +10,9 @@ This application is a library manager built with React.
 
 ## Get started
 
-1. Run `npm install`
-2. Run `npm start`
-3. Open `localhost:3000`
+1. Run `npm install` in order to install packages.
+2. Run `npm start` in order to start the development server.
+3. Navigate to `localhost:3000` to open the application.
 
 ## Notes
 
