@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-
+import PropTypes from "prop-types";
 
 class SearchBar extends React.Component {
     constructor(props) {
@@ -65,5 +65,13 @@ class SearchBar extends React.Component {
     }
 
 }
+
+SearchBar.propTypes = {
+    handleSearch: PropTypes.func,
+    searchReturnedError: PropTypes.bool,
+    errorMessageShouldShow: PropTypes.bool,
+    closeErrorMessage: PropTypes.func
+}
+
 
 export default SearchBar;

@@ -1,6 +1,6 @@
 import React from 'react';
 import BookCard from './BookCard.js';
-
+import PropTypes from 'prop-types';
 
 const Shelf = (props) => {
     return (
@@ -17,6 +17,11 @@ const Shelf = (props) => {
             })}
         </div>
     )
+}
+
+Shelf.propTypes = {
+    books: PropTypes.array,
+    updateShelf: PropTypes.func
 }
 
 export default Shelf;

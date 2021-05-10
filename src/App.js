@@ -18,7 +18,6 @@ class App extends React.Component {
     }
 
     addBookToShelf(book, shelf){
-        console.log(`Adding new book ${book.title} to shelf ${shelf}`)
         this.setState((previousState) => {
             book['shelf'] = shelf;
             return {
@@ -28,7 +27,6 @@ class App extends React.Component {
     }
 
     updateBookToShelf(book, shelf){
-        console.log(`Updating book ${book.title}: moving to shelf ${shelf}`)
         this.setState({
             books: this.state.books.map(
                 (b) => {
@@ -65,9 +63,8 @@ class App extends React.Component {
             })
             return
         }
-        console.log(`Now searching for ${query}`);
+
         BooksAPI.search(query).then((results) => {
-            console.log(`Received results for ${query}`)
             if(results.hasOwnProperty('error')){
                 this.searchCouldNotComplete();
             } else {
@@ -119,13 +116,13 @@ class App extends React.Component {
     render() {
         return (
             <div className="">
-                <Route exact path="/" render={() => (
+                <Route exact path="/">
                     <Library
                         books={this.state.books}
                         updateShelf={this.updateShelf}
                     />
-                )}/>
-                <Route exact path="/search" render={() => (
+                </Route>
+                <Route exact path="/search">
                     <Search
                         updateShelf={this.updateShelfAndSearchResults}
                         searchResults={this.state.searchResults}
@@ -134,7 +131,7 @@ class App extends React.Component {
                         errorMessageShouldShow={this.state.errorMessageShouldShow}
                         closeErrorMessage={this.closeErrorMessage}
                     />
-                )}/>
+                </Route>
             </div>
         )
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import Shelf from './Shelf.js';
 import {Link} from "react-router-dom";
-
+import PropTypes from 'prop-types';
 
 const LibraryHeader = () => {
     return <div className="flex p-8 justify-center bg-green-600 text-white text-3xl font-semibold">
@@ -60,6 +60,11 @@ class Library extends React.Component {
             </div>
         )
     }
+}
+
+Library.propTypes = {
+    updateShelf: PropTypes.func,
+    books: PropTypes.array
 }
 
 export default Library;
