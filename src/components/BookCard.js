@@ -3,10 +3,6 @@ import NoThumbnailAvailable from '../img/NoThumbnailAvailable.png';
 
 class BookCard extends React.Component {
 
-    handleShelfChange = (e) => {
-        console.log(e.target.value);
-    }
-
     render() {
         return (
             <div className="m-8 flex flex-col flex-initial">
